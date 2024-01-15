@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-Functions functions = new Functions();
+        Functions functions = new Functions();
 
 
         System.out.println("\n===============================");
