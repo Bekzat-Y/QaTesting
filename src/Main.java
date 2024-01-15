@@ -9,13 +9,13 @@ public class Main {
         System.out.println("\n===============================");
         System.out.println("        Contact Manager        ");
         System.out.println("===============================");
-        System.out.println("1. Add Contact");
-        System.out.println("2. View Contacts");
-        System.out.println("3. Delete Contact");
-        System.out.println("4. Update Contact");
-        System.out.println("5. Search Contact");
-        System.out.println("6. Exit");
-        System.out.print("Enter your choice: ");
+        System.out.println("1. Создать контакт ");
+        System.out.println("2. Просмотреть контакты ");
+        System.out.println("3. Удалить контакт ");
+        System.out.println("4. Обновить контакт ");
+        System.out.println("5. Поиск контакта ");
+        System.out.println("6. Выйти ");
+        System.out.print("Выберите действие: ");
 
 
 
@@ -40,27 +40,60 @@ do {
             System.out.println("Введите Email: ");
             String scanEmail = scanner.nextLine();
 
-            functions.addContact(new Contact(scanName, scanSureName, scanPhoneNumber, scanEmail));
-        }
+functions.addContact(scanName,scanSureName,scanPhoneNumber,scanEmail);
+
+functions.interFace();
+
+        }break;
 
         case 2: {
 
-            functions.readContact();
+            functions.viewContacts();
 
-        }
+            functions.interFace();
+        }break;
 
         case 3: {
+            System.out.println("Выберите индекс который хотите удалить ");
+            int delete = scanner.nextInt();
 
-        }
+            System.out.println("Введите Имя: ");
+            String scanName = scanner.nextLine();
+
+            System.out.println("Введите Фамилию: ");
+            String scanSureName = scanner.nextLine();
+
+            System.out.println("Введите Номер Телефона: ");
+            String scanPhoneNumber = scanner.nextLine();
+
+            System.out.println("Введите Email: ");
+            String scanEmail = scanner.nextLine();
+
+            functions.updateContact(delete,scanName,scanSureName,scanPhoneNumber,scanEmail);
+            functions.interFace();
+
+        }break;
 
         case 4: {
+            functions.viewContacts();
+            System.out.print("Введите: ");
+            int deleteIndex = scanner.nextByte();
+functions.deleteContact(deleteIndex);
 
-        }
+            functions.interFace();
+
+        }break;
         case 5: {
 
-        }
+            System.out.print("Введите Имя : ");
+            String name = scanner.next();
+
+            System.out.print("Введите Фамилию : ");
+            String surname  = scanner.next();
+
+
+        }break;
         case 6:{
-            System.out.println("Exiting");
             break;
     } default:
             System.out.println("Введите существующий номер: ");
@@ -68,5 +101,5 @@ do {
 }while (choose!=6);
 
 
-}
+    }
 }
