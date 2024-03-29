@@ -84,7 +84,6 @@ functions.interFace();
             functions.searchContact(name);
 
         }break;
-
         case 6:{
             break;
 
@@ -109,6 +108,7 @@ functions.interFace();
 
 }while (choose!=6);
 
-
+        System.out.println("hello");
     }
+
 }
